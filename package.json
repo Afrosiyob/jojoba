@@ -1,7 +1,7 @@
 {
-  "homepage": "https://afrosiyob.github.io/jojoba",
+  "homepage": "https://Afrosiyob.github.io/jojoba",
   "name": "@afrosiyob/jojoba",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "url": "git://github.com/Afrosiyob/jojoba.git"
   },
@@ -99,7 +99,7 @@
     "test:watch": "react-scripts test --env=jsdom --coverage --watchAll --collectCoverageFrom=src/components/**/*.{ts,tsx} --collectCoverageFrom=\"!src/components/**/*.{types,stories,constants,test,spec}.{ts,tsx}\"",
     "test:build": "run-s build",
     "storybook": "export NODE_OPTIONS=--openssl-legacy-provider; start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "export NODE_OPTIONS=--openssl-legacy-provider; build-storybook",
     "build": "rollup -c",
     "watch": "rollup -c --watch",
     "dev": "concurrently \" yarn watch \" \" yarn --cwd ./examples/react start \" ",
