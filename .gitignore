@@ -4,6 +4,3 @@ node_modules
 coverage
 dist
 storybook-static
-
-[url "git@github.com:"]
-insteadOf = https://github.com/
