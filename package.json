@@ -1,9 +1,11 @@
 {
   "name": "@afrosiyob/jojoba",
-  "version": "0.0.1",
-  "repository": "https://github.com/afrosiyob/jojoba.git",
+  "version": "1.0.0",
+  "repository": {
+    "url": "git://github.com/Afrosiyob/jojoba.git"
+  },
   "publishConfig": {
-    "@afrosiyob:registry": "https://gitlab.com/api/v4/projects/43067550/packages/npm/"
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "Afrosiyob <45900728+Afrosiyob@users.noreply.github.com>",
   "license": "MIT",
