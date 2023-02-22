@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Afrosiyob.github.io/jojoba",
   "name": "@afrosiyob/jojoba",
   "version": "1.0.1",
   "repository": {
@@ -111,7 +112,9 @@
     "prettier-format": "prettier --config .prettierrc \"{src,tools,public}/**/*.{json,ts,tsx,js,jsx,md,scss,css,html}\" --write",
     "prettier-watch": "onchange \"{src,tools,public}/**/*.{json,ts,tsx,js,jsx,md,scss,css,html}\" -- prettier --write {{changed}}",
     "prepare": "husky install",
-    "prebuild": "rimraf dist"
+    "prebuild": "rimraf dist",
+    "predeploy": "yarn build-storybook",
+    "deploy": "gh-pages -d storybook-static"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

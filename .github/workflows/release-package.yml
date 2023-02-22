@@ -17,5 +17,6 @@ jobs:
           scope: "@afrosiyob"
       - run: yarn install
       - run: yarn test
+      - run: npm run deploy
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
