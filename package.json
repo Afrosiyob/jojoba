@@ -99,7 +99,7 @@
     "test:watch": "react-scripts test --env=jsdom --coverage --watchAll --collectCoverageFrom=src/components/**/*.{ts,tsx} --collectCoverageFrom=\"!src/components/**/*.{types,stories,constants,test,spec}.{ts,tsx}\"",
     "test:build": "run-s build",
     "storybook": "export NODE_OPTIONS=--openssl-legacy-provider; start-storybook -p 6006",
-    "build-storybook": "export NODE_OPTIONS=--openssl-legacy-provider; build-storybook",
+    "build-storybook": "build-storybook",
     "build": "rollup -c",
     "watch": "rollup -c --watch",
     "dev": "concurrently \" yarn watch \" \" yarn --cwd ./examples/react start \" ",
