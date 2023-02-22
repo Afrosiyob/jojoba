@@ -1,0 +1,41 @@
+stages:
+  - package-release
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+package-release:
+  image: node:latest
+  stage: package-release
+  script:
+    - cp .npmrc.build .npmrc
+    - yarn install
+    - yarn test
+    - npm config set "//gitlab.com/api/v4/projects/43067550/packages/npm/:_authToken" "MFAYoXP8HvcUerifah4k"
+    - |
+      if [[ "$(npm view ${NPM_PACKAGE_NAME} versions)" != *"'${NPM_PACKAGE_VERSION}'"* ]]; then
+        npm publish
+        echo "Successfully published version ${NPM_PACKAGE_VERSION} of ${NPM_PACKAGE_NAME} to GitLab's NPM registry: ${CI_PROJECT_URL}/-/packages"
+      else
+        echo "Version ${NPM_PACKAGE_VERSION} of ${NPM_PACKAGE_NAME} has already been published, so no new version has been published."
+      fi
+  artifacts:
+    when: always
+    expire_in: 30 days
+  only:
+    - main
+
+pages:
+  image: node:latest
+  stage: deploy
+  script:
+    - yarn install
+    - yarn build-storybook
+    - cp -r storybook-static public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

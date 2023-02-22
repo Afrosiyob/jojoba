@@ -1,0 +1,11 @@
+/node_modules
+/dist
+/build
+/public
+/coverage
+/storybook-static
+*.css
+*.svg
+
+rollup.config.js
+plopfile.js

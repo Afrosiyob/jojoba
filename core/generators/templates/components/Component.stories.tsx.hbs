@@ -1,0 +1,31 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable @typescript-eslint/consistent-type-assertions */
+
+import React from "react";
+import { type ComponentMeta, type ComponentStory } from "@storybook/react";
+
+import {{pascalCase name}} from "./{{pascalCase name}}";
+
+export default {
+  title: "Component/{{pascalCase name}}",
+  component: {{pascalCase name}},
+  argTypes: {
+    children: {
+      control: "text",
+    },
+  },
+  parameters: {
+    actions: { argTypesRegex: "^on.*" },
+  },
+} as ComponentMeta<typeof {{pascalCase name}}>;
+
+export const ToStorybook: ComponentStory<typeof {{pascalCase name}}> = props => (
+  <{{pascalCase name}} {...props} />
+);
+
+ToStorybook.story = {
+  name: "{{pascalCase name}}",
+  args: {
+    children: "{{pascalCase name}} component",
+  },
+};

@@ -1,0 +1,8 @@
+{
+  "src/**/*.{css,scss,sass}": ["yarn stylelint", "yarn stylelint:fix"],
+  "src/**/*.{js,jsx,ts,tsx}": ["yarn lint", "yarn lint:fix"],
+  "**/*.{json,ts,tsx,js,jsx,md,css,scss,sass,html}": [
+    "yarn format",
+    "yarn prettier-format"
+  ]
+}

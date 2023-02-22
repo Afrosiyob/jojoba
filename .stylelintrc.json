@@ -1,0 +1,49 @@
+{
+  "extends": ["stylelint-config-recommended-scss", "stylelint-config-prettier"],
+  "ignoreFiles": [
+    "node_modules/**/*.{css,scss,less,sass}",
+    "coverage/**/*.{css,scss,less,sass}",
+    "dist/**/*.{css,scss,less,sass}",
+    "storybook-static/**/*.{css,scss,less,sass}",
+    "build/**/*.{css,scss,less,sass}",
+    "public/**/*.{css,scss,less,sass}"
+  ],
+  "overrides": [
+    {
+      "files": ["src/**/*.scss", "src/**/*.scss"],
+      "customSyntax": "postcss-scss",
+      "rules": {
+        "selector-class-pattern": [
+          "^([a-z][a-z0-9]*)(__[a-z0-9]+)*$",
+          {
+            "message": "Expected custom property name to be kebab-case with '__' "
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/**/*.module.scss", "src/**/*.module.scss"],
+      "customSyntax": "postcss-scss",
+      "rules": {
+        "selector-class-pattern": [
+          "^([a-z][a-z0-9]*)(__[a-z0-9]+)*$",
+          {
+            "message": "Expected custom property name to be kebab-case with '__' "
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/**/*.custom.scss", "src/**/*.custom.scss"],
+      "customSyntax": "postcss-scss",
+      "rules": {
+        "custom-property-pattern": [
+          "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+          {
+            "message": "Expected custom property name to be kebab-case with '_' "
+          }
+        ]
+      }
+    }
+  ]
+}
