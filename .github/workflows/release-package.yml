@@ -21,6 +21,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles ('**/package-lock.json') }}
           restore-keys: |
             S{{ runner.os }}-node-
+      - run: npm config set "//npm.pkg.github.com/:_authToken" "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"
       - run: yarn install
       - run: yarn test
       - run: yarn deploy
