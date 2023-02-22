@@ -15,7 +15,6 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
           scope: "@afrosiyob"
-      - uses: kriasoft/check-version@v1
       - uses: actions/cache@v1
         with:
           path: node_modules
