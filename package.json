@@ -3,7 +3,7 @@
   "name": "@afrosiyob/jojoba",
   "version": "1.0.5",
   "repository": {
-    "url": "git://github.com/Afrosiyob/jojoba.git"
+    "url": "https://github.com/Afrosiyob/jojoba.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
