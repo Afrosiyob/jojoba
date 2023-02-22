@@ -21,6 +21,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles ('**/package-lock.json') }}
           restore-keys: |
             S{{ runner.os }}-node-
+      - run: cp .npmrc
       - run: yarn install
       - run: yarn test
       - run: yarn deploy
