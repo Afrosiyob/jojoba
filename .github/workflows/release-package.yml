@@ -14,7 +14,6 @@ jobs:
         with:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
-          scope: "@afrosiyob"
       - uses: actions/cache@v1
         with:
           path: node_modules
