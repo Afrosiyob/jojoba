@@ -1,34 +1,26 @@
-name: Release Package
+name: Package CI/CD
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  publish-gpr:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [17.x, 18.x]
+
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-          registry-url: https://npm.pkg.github.com/
-          scope: "@afrosiyob"
-      - uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles ('**/package-lock.json') }}
-          restore-keys: |
-            S{{ runner.os }}-node-
-      - run: git config user.name ${{secrets.NAME}}
-      - run: git config user.email ${{secrets.EMAIL}}
+          node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn test
+      - run: npm config set "//npm.pkg.github.com/:_authToken" "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"
+      - run: npm publish
       - run: yarn deploy
-
-      - uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: storybook-static
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
