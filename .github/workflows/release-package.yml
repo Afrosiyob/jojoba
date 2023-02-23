@@ -22,12 +22,14 @@ jobs:
           always-auth: true
           registry-url: https://npm.pkg.github.com
           scope: '@afrosiyob'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: yarn install
       - run: yarn test
       - run: cp .npmrc.build .npmrc
       - run: npm config set "//npm.pkg.github.com/:_authToken" "${{ secrets.GITHUB_TOKEN }}"
       - run: npm publish
       - run: yarn deploy
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
