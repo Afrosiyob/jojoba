@@ -27,7 +27,8 @@ jobs:
       - run: yarn test
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-          folder: storybook-static
+        - uses: JamesIves/github-pages-deploy-action@v4
+          with:
+            folder: storybook-static
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
