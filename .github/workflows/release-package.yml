@@ -24,7 +24,7 @@ jobs:
           scope: '@afrosiyob'
       - run: yarn install
       - run: yarn test
-      - run: npm config set "//npm.pkg.github.com/:_authToken" "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"
+      - run: npm config set "//npm.pkg.github.com/:_authToken" "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"
       - run: npm publish
       - run: yarn deploy
         env:
