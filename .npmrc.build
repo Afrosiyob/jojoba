@@ -1,3 +1,3 @@
-@afrosiyob:registry=https://gitlab.com/api/v4/packages/npm/
-'//gitlab.com/api/v4/packages/npm/:_authToken'="MFAYoXP8HvcUerifah4k"
-'//gitlab.com/api/v4/projects/43067550/packages/npm/:_authToken'="MFAYoXP8HvcUerifah4k"
+@afrosiyob:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=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
+always-auth=true
