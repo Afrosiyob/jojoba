@@ -15,7 +15,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -23,12 +22,10 @@ jobs:
           always-auth: true
           registry-url: https://npm.pkg.github.com
           scope: '@afrosiyob'
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn install
-        run: yarn test
-        run: npm publish
-        run: yarn deploy
+      - run: yarn install
+      - run: yarn test
+      - run: npm config set "//npm.pkg.github.com/:_authToken" "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"
+      - run: npm publish
+      - run: yarn deploy
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
